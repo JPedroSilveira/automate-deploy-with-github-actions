@@ -26,6 +26,15 @@ npm run start
 npm run build
 ```
 
+## Commit Message
+
+We are using commitzen to help you with commit creation following your patterns.
+Execute:
+
+```
+npx commitizen init cz-conventional-changelog --save-dev --save-exact
+```
+
 ## Quick deploy
 
 You can use Surge for a quick deployment:
