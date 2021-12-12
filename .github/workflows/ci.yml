@@ -9,12 +9,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Use NodeJS
+      - name: Cache Node Modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - name: Setup NodeJS
         uses: actions/setup-node@v1
         with:
           node-version: "14.x"
-      - run: npm ci
-      - run: npm run test -- --coverage
+      - name: Install Node Modules
+        run: npm ci
+      - name: Run Tests
+        run: npm run test -- --coverage
         env:
           CI: true
       - name: Build Project
