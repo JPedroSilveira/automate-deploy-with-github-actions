@@ -56,7 +56,7 @@ jobs:
         if: github.event_name == 'push'
         run: |
           npm install -g surge
-          npx surge --project ./build --domain tan-act.surge.sh
+          npx surge --project ./build --domain tan-act-stage.surge.sh
       - name: Deploy to Production
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
