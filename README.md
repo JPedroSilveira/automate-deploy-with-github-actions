@@ -1,3 +1,5 @@
+![](https://github.com/JPedroSilveira/github-actions-v2/workflows/CI/badge.svg?branch=develop&event=push)
+
 # Create a CI/CD workflow for React app
 
 ## Setup
